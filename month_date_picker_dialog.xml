@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorWhite"
+        android:background="@drawable/top_rounded_corners">
+
+        <NumberPicker
+            android:id="@+id/year_picker"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@id/month_picker"
+            app:layout_constraintStart_toStartOf="parent"
+            android:theme="@style/NumberPickerStyle" />
+
+        <NumberPicker
+            android:id="@+id/month_picker"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintStart_toEndOf="@id/year_picker"
+            app:layout_constraintEnd_toStartOf="@id/date_picker"
+            android:theme="@style/NumberPickerStyle" />
+        <NumberPicker
+            android:id="@+id/date_picker"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintStart_toEndOf="@id/month_picker"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:theme="@style/NumberPickerStyle" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginTop="@dimen/_5sdp"
+            style="@style/button_rounded_blue_filled"
+            app:layout_constraintTop_toBottomOf="@id/year_picker"
+            app:layout_constraintStart_toStartOf="@id/year_picker"
+            app:layout_constraintEnd_toEndOf="@id/date_picker"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:backgroundTint="@color/colorWhite"
+            android:background="@color/colorWhite"
+            android:textColor="@color/colorBlack"
+            style="@style/button_rounded_blue_filled"
+            app:layout_constraintTop_toBottomOf="@id/btn_submit"
+            app:layout_constraintStart_toStartOf="@id/year_picker"
+            app:layout_constraintEnd_toEndOf="@id/date_picker"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
